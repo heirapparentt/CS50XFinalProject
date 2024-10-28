@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Check the tasks that are done
+{% endblock %}
+
+{% block main %}
+    <form action="/complete" method="post">
+        <h3> Check a task </h3>
+        <div>
+            <ul>
+                {% for task in tasks %}
+                <li><label><input type="checkbox" name="{{ task.task }}"> {{ task.task }}</label></li>
+                {% endfor %}
+            </ul>
+            <button class="btn btn-primary" type="submit">Submit Tasks</button>
+        </div>
+    </form>
+{% endblock %}

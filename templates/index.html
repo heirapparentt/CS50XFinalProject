@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Show all tasks
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h3> Your tasks </h3>
+        <table class="table">
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Date Added</th>
+                <th>Date Completed</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.task }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.add_date_time }}</td>
+                <td>{{ task.complete_date_time }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
